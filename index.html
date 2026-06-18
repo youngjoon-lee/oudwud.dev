@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>oudwud — A studio for software that lasts.</title>
+        <meta
+            name="description"
+            content="oudwud — a small studio building software that lasts. Home of atman and Beam."
+        />
+        <style>
+            :root {
+                color-scheme: light dark;
+                --bg: #fafaf7;
+                --fg: #111;
+                --muted: #666;
+                --rule: #e5e5e0;
+            }
+            @media (prefers-color-scheme: dark) {
+                :root {
+                    --bg: #0d0d0d;
+                    --fg: #f0efea;
+                    --muted: #888;
+                    --rule: #222;
+                }
+            }
+            * {
+                box-sizing: border-box;
+            }
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                background: var(--bg);
+                color: var(--fg);
+                font-family: ui-serif, Georgia, "Times New Roman", serif;
+                font-size: 18px;
+                line-height: 1.6;
+                min-height: 100dvh;
+                display: grid;
+                place-items: center;
+                padding: 2rem;
+            }
+            main {
+                max-width: 36rem;
+                width: 100%;
+            }
+            h1 {
+                font-size: clamp(2.5rem, 6vw, 4rem);
+                font-weight: 500;
+                letter-spacing: -0.02em;
+                margin: 0 0 0.5rem;
+            }
+            .tagline {
+                color: var(--muted);
+                font-style: italic;
+                margin: 0 0 2.5rem;
+            }
+            .creed {
+                font-size: 1.15rem;
+                line-height: 1.5;
+                margin: 0;
+            }
+            .creed span {
+                display: block;
+            }
+            .creed .strong {
+                color: var(--fg);
+            }
+            .creed .muted {
+                color: var(--muted);
+            }
+            h2 {
+                font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+                font-size: 0.8rem;
+                font-weight: 500;
+                text-transform: uppercase;
+                letter-spacing: 0.12em;
+                color: var(--muted);
+                margin: 0 0 1rem;
+            }
+            hr {
+                border: 0;
+                border-top: 1px solid var(--rule);
+                margin: 2.25rem 0;
+            }
+            .values {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            .values li {
+                display: block;
+                margin: 0 0 1rem;
+            }
+            .values li:last-child {
+                margin-bottom: 0;
+            }
+            .values .name {
+                display: block;
+            }
+            .values .desc {
+                display: block;
+                color: var(--muted);
+                font-size: 0.95rem;
+                font-style: italic;
+            }
+            .projects {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+                font-size: 0.95rem;
+            }
+            .projects li {
+                margin: 0.4rem 0;
+                display: flex;
+                gap: 0.75rem;
+            }
+            .projects li .key {
+                color: var(--muted);
+                flex: 0 0 7rem;
+            }
+            a {
+                color: inherit;
+                text-decoration: underline;
+                text-underline-offset: 3px;
+            }
+            a:hover {
+                color: var(--muted);
+            }
+            footer {
+                margin-top: 2.5rem;
+                font-size: 0.85rem;
+                color: var(--muted);
+                font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1>oudwud</h1>
+            <p class="tagline">A studio for software that lasts.</p>
+
+            <p class="creed">
+                <span class="muted">Tools come and go.</span>
+                <span class="muted">What you make should outlive them.</span>
+                <span class="strong">Build to last.</span>
+            </p>
+
+            <hr />
+
+            <h2>Values</h2>
+            <ul class="values">
+                <li>
+                    <span class="name">Built to last</span>
+                    <span class="desc"
+                        >Software measured in decades, not release cycles.</span
+                    >
+                </li>
+                <li>
+                    <span class="name">Local-first</span>
+                    <span class="desc"
+                        >Your data lives with you, not on someone else’s
+                        server.</span
+                    >
+                </li>
+                <li>
+                    <span class="name">Composable</span>
+                    <span class="desc">Small tools, infinite shapes.</span>
+                </li>
+                <li>
+                    <span class="name">Open</span>
+                    <span class="desc"
+                        >Source available, formats portable.</span
+                    >
+                </li>
+            </ul>
+
+            <hr />
+
+            <h2>Projects</h2>
+            <ul class="projects">
+                <li>
+                    <span class="key">atman</span>
+                    <a href="https://atman.sh"
+                        >local-first development project</a
+                    >
+                </li>
+                <li>
+                    <span class="key">Beam</span>
+                    <a href="https://atman.sh/beam"
+                        >peer-to-peer file transfer</a
+                    >
+                </li>
+                <li>
+                    <span class="key">Blog</span>
+                    <a href="https://blog.oudwud.dev">notes & writing</a>
+                </li>
+            </ul>
+        </main>
+    </body>
+</html>
