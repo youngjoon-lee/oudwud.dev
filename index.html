@@ -8,6 +8,7 @@
             name="description"
             content="oudwud — a small studio building software that lasts. Home of atman and Beam."
         />
+        <link rel="icon" type="image/png" href="/icons/oudwud_icon_256.png" />
         <style>
             :root {
                 color-scheme: light dark;
@@ -47,11 +48,23 @@
                 max-width: 36rem;
                 width: 100%;
             }
+            .title {
+                display: flex;
+                align-items: center;
+                gap: 1.25rem;
+                margin: 0 0 0.5rem;
+            }
+            .logo {
+                width: 56px;
+                height: 56px;
+                display: block;
+                flex-shrink: 0;
+            }
             h1 {
                 font-size: clamp(2.5rem, 6vw, 4rem);
                 font-weight: 500;
                 letter-spacing: -0.02em;
-                margin: 0 0 0.5rem;
+                margin: 0;
             }
             .tagline {
                 color: var(--muted);
@@ -141,7 +154,10 @@
     </head>
     <body>
         <main>
-            <h1>oudwud</h1>
+            <div class="title">
+                <h1>oudwud</h1>
+                <img class="logo" src="/icons/oudwud_icon_256.png" alt="" width="56" height="56" />
+            </div>
             <p class="tagline">A studio for software that lasts.</p>
 
             <p class="creed">
