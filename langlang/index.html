@@ -141,6 +141,15 @@
             .platforms a.cased {
                 text-transform: none;
             }
+            .releases {
+                margin: 0.9rem 0 0;
+                font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+                font-size: 0.75rem;
+                color: var(--muted);
+            }
+            .releases a:hover {
+                color: var(--fg);
+            }
             .platforms svg {
                 width: 22px;
                 height: 22px;
@@ -228,6 +237,9 @@
                     </a>
                 </li>
             </ul>
+            <p class="releases">
+                <span id="latest-version"></span><a href="https://github.com/youngjoon-lee/langlang/releases">All downloads &amp; release notes →</a>
+            </p>
 
             <hr />
 
@@ -248,12 +260,14 @@
             </footer>
         </main>
         <script>
-            // Point the macOS/Windows buttons straight at the latest installer so
-            // clicking downloads it. Asset names carry the version, so look them up;
-            // if that fails, the buttons keep linking to the releases page.
+            // Show the latest version and point the macOS/Windows buttons straight
+            // at its installers so clicking downloads them. Asset names carry the
+            // version, so look them up; if that fails, the buttons keep linking to
+            // the releases page.
             fetch("https://api.github.com/repos/youngjoon-lee/langlang/releases/latest")
                 .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
-                .then(({ assets }) => {
+                .then(({ tag_name, assets }) => {
+                    if (tag_name) document.getElementById("latest-version").textContent = `${tag_name} · `;
                     document.querySelectorAll("a[data-asset]").forEach((a) => {
                         const re = new RegExp(a.dataset.asset);
                         const asset = assets.find((x) => re.test(x.name));
